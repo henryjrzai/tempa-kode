@@ -1,3 +1,5 @@
+import { Slide } from "react-awesome-reveal";
+
 export default function ReasonForChoosing() {
 	const data = [
 		{
@@ -26,15 +28,18 @@ export default function ReasonForChoosing() {
 		<section className="bg-gradient-to-l from-blue-50/80 to-white">
 			<div id="reason" className="max-w-screen-xl mx-6 lg:mx-auto py-16 lg:flex flex-row ">
 				<div class="basis-1/3 lg:flex lg:justify-center lg:items-center lg:mr-10">
+				<Slide direction="left" cascade triggerOnce>
 					<h2 className="text-5xl/snug font-semibold text-center lg:text-left">MENGAPA MEMILIH TEMPA KODE?</h2>
+				</Slide>
 				</div>
 				<div class="basis-2/3 grid grid-cols-1 md:grid-cols-2 gap-5 mt-10">
+				<Slide direction="up" cascade damping={0.2} triggerOnce>
 					{data.map((item, index) => (
 						<div className="reason m-5" key={index}>
 							<div 
 								className="bg-cover bg-center bg-no-repeat w-10 h-10 flex justify-center items-center mb-3" 
 								style={{ backgroundImage: "url('/images/reason.svg')" }}
-							>
+								>
 									<p className="text-white">{item.id}</p>
 							</div>
 							<h4 className="text-3xl font-bold mb-3">{item.title}</h4>
@@ -42,6 +47,7 @@ export default function ReasonForChoosing() {
 							<hr className="md:hidden border opacity-10"/>
 						</div>
 					))}
+				</Slide>
 				</div>
 			</div>
 		</section>

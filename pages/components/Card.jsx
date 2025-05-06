@@ -3,7 +3,7 @@ export function CardService(props) {
 	const {icon, title, description} = props;
 
 	return (
-		<div class="w-full lg:w-lg flex flex-col justify-center items-center p-6 hover:bg-white border border-gray-200 rounded-lg shadow-sm text-center hover:shadow-lg transition duration-300 ease-in-out py-7">
+		<div className="w-full lg:w-lg flex flex-col justify-center items-center px-6 py-7 hover:bg-white border border-gray-200 rounded-lg shadow-sm text-center hover:shadow-lg transition duration-300 ease-in-out h-full">
 			<h5 class="mb-2 text-3xl font-semibold tracking-tight text-gray-900">{icon}</h5>
 			<h5 class="mb-2 text-3xl font-semibold tracking-tight text-gray-900">{title}</h5>
 			<p class="mb-3 font-normal text-base text-gray-500 dark:text-gray-400">{description}</p>

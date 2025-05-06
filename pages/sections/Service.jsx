@@ -1,4 +1,6 @@
 import { CardService } from "../components/Card"
+import { Fade, Slide } from "react-awesome-reveal";
+
 export default function Service(){
 	const service = [
 		{
@@ -25,11 +27,15 @@ export default function Service(){
 
 	return (
 		<section id="service" className="bg-[#F4F6FC] py-32">
-			<h2 className="text-4xl text-center font-semibold">👨‍💻 Apa Yang Kami Tawarkan ?</h2>
+			<Fade cascade damping={0.2} triggerOnce>
+				<h2 className="text-4xl text-center font-semibold">👨‍💻 Apa Yang Kami Tawarkan ?</h2>
+			</Fade>
 			<div className="max-w-screen-xl lg:mx-auto grid md:grid-flow-col md:grid-rows-2 gap-5 m-5 justify-center">
+			<Slide direction="up" cascade damping={0.2} triggerOnce>
 				{service.map((item, index) => (
 					<CardService key={index} icon={item.icon} title={item.title} description={item.description} />
 				))}
+				</Slide>
 			</div>
 		</section>
 	)

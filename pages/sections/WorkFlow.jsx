@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { ChevronUp, ChevronDown, X, Plus } from "lucide-react";
+import { Fade, Slide } from "react-awesome-reveal";
 
 export default function WorkFlow() {
     const [openItem, setOpenItem] = useState(0);
@@ -45,9 +46,12 @@ export default function WorkFlow() {
 		<section id="workflow" className="bg-[#F4F6FC] py-32">
             <div className="max-w-screen-xl mx-6 lg:mx-auto lg:flex flex-row">
                 <div className="basis-1/3 lg:flex lg:flex-col lg:justify-center lg:items-center lg:mr-10">
-                    <h2 className="text-4xl/snug font-semibold text-center lg:text-left">Bagaimana Proses Kerja Kami? ⚒️</h2>
+                    <Fade direction="up" triggerOnce={true}>
+                        <h2 className="text-4xl/snug font-semibold text-center lg:text-left">Bagaimana Proses Kerja Kami? ⚒️</h2>
+                    </Fade>
                 </div>
                 <div className="basis-2/3 w-full mt-10">
+                <Slide direction="up" cascade damping={0.2} triggerOnce>
                 {processSteps.map((step, index) => (
                     <div 
                         key={step.number}
@@ -76,6 +80,8 @@ export default function WorkFlow() {
                             )}
                         </div>
                     ))}
+                </Slide>
+                
                 </div>
             </div>
         </section>

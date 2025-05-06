@@ -1,4 +1,5 @@
 import { PricingCard } from "../components/Card"
+import { Fade, Slide } from "react-awesome-reveal"
 
 const priceList = [
     {
@@ -55,14 +56,21 @@ const priceList = [
 
 export default function PriceList() {
     return (
-        <section id="price" className="max-w-screen-xl m-auto py-32">
-			<div className="flex flex-col items-center justify-center mb-9">
-				<h2 className="text-5xl/snug font-semibold text-center">Harga yang Kompetitif 💰</h2>
-				<p className="font-thin mb-4 w-2xl text-center text-base/8 mt-2.5">Kami menawarkan harga yang sesuai dengan kualitas premium yang Anda dapatkan. Konsultasikan kebutuhan Anda dan dapatkan penawaran terbaik </p>
-			</div>
-            <div className="flex flex-col md:flex-row gap-3 md:flex-wrap justify-center items-center md:items-baseline">
-                {
-                    priceList.map((item, index) => (
+        <section id="price" className="max-w-screen-xl mx-auto py-32 px-4">
+            <div className="w-full flex flex-col items-center justify-center mb-9">
+                <Fade direction="up" duration={1000} triggerOnce>
+                    <h2 className="text-4xl sm:text-5xl font-semibold text-center">
+                        Harga yang Kompetitif 💰
+                    </h2>
+                    <p className="font-thin mb-4 max-w-2xl text-center text-base sm:text-lg mt-2.5">
+                        Kami menawarkan harga yang sesuai dengan kualitas premium yang Anda
+                        dapatkan. Konsultasikan kebutuhan Anda dan dapatkan penawaran terbaik.
+                    </p>
+                </Fade>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <Slide direction="right" cascade damping={0.2} triggerOnce>
+                    {priceList.map((item, index) => (
                         <PricingCard
                             key={index}
                             name={item.name}
@@ -71,9 +79,9 @@ export default function PriceList() {
                             badgeColor={item.badgeColor}
                             item={item.item}
                         />
-                    ))
-                }
+                    ))}
+                </Slide>
             </div>
-        </section>  
+        </section>
     )
 }
