@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { SolidButton } from '../components/Buttons'
+import { SolidButton } from '../../components/Buttons'
 import { Fade  } from "react-awesome-reveal";
 
 export default function Hero() {

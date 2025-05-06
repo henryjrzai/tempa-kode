@@ -1,4 +1,4 @@
-import { PricingCard } from "../components/Card"
+import { PricingCard } from "../../components/Card"
 import { Fade, Slide } from "react-awesome-reveal"
 
 const priceList = [
@@ -68,7 +68,7 @@ export default function PriceList() {
                     </p>
                 </Fade>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 <Slide direction="right" cascade damping={0.2} triggerOnce>
                     {priceList.map((item, index) => (
                         <PricingCard

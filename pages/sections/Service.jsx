@@ -1,4 +1,4 @@
-import { CardService } from "../components/Card"
+import { CardService } from "../../components/Card"
 import { Fade, Slide } from "react-awesome-reveal";
 
 export default function Service(){
